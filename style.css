@@ -1,4 +1,5 @@
 /* 1. Global Styles - Setting the theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,27 +7,38 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5; /* Light grey background */
-    color: #333;
+    font-family: 'Inter', sans-serif;
+    /* Soft, modern gradient background */
+    background: linear-gradient(135deg, #e0e7ff 0%, #ede9fe 100%);
+    color: #1e293b;
     line-height: 1.6;
     padding: 40px 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
-/* 2. Main Container - The white card in the middle */
 .container {
+    width: 100%;
     max-width: 900px;
-    margin: 0 auto;
-    background: #fff;
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
     padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 h1 {
-    font-size: 2rem;
-    color: #1e293b;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
+    font-weight: 800;
+    /* Creates a Purple-to-Pink gradient text */
+    background: linear-gradient(to right, #4f46e5, #d946ef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
 }
 
 .badge {
@@ -58,19 +70,21 @@ textarea:focus {
 
 /* 4. The Button */
 button {
-    background-color: #6366f1;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
     color: white;
     border: none;
     padding: 14px 28px;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
 }
 
 button:hover {
-    background-color: #4f46e5;
+    transform: translateY(-2px); /* Lifts the button up slightly */
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5); /* Increases the glow */
 }
 
 /* 5. Results Area - This is what JavaScript populates */
@@ -124,9 +138,126 @@ button:hover {
 }
 
 .secondary-btn {
-    background-color: #94a3b8 !important; /* Grey color */
+    background: #f1f5f9 !important;
+    color: #475569 !important;
+    box-shadow: none;
 }
 
 .secondary-btn:hover {
-    background-color: #64748b !important;
+    background: #e2e8f0 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.suggestion-box {
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    border: 1px dashed #cbd5e1;
+}
+
+.suggestion-box span {
+    font-weight: bold;
+    color: #6366f1; /* Purple color */
+    display: block;
+    margin-bottom: 5px;
+}
+
+code {
+    display: block;
+    background: #1e293b; /* Dark background like a code editor */
+    color: #f8fafc;
+    padding: 8px;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Custom Scrollbar for the Textarea and Page */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* --- 1. THE TITLE AND BADGE FIX --- */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #4f46e5, #d946ef);
+    -webkit-background-clip: text;
+    background-clip: text; /* Fixes the yellow squiggly warning */
+    color: transparent; /* Makes the gradient visible */
+    margin-bottom: 0;
+}
+
+.badge {
+    -webkit-text-fill-color: initial; /* Forces the text to stop being transparent */
+    color: #475569; /* Dark grey text */
+    background: #e2e8f0;
+}
+
+.icon-btn {
+    background: transparent;
+    box-shadow: none;
+    font-size: 1.5rem;
+    padding: 5px;
+}
+.icon-btn:hover {
+    background: rgba(0,0,0,0.05);
+    box-shadow: none;
+}
+
+/* --- 2. DARK MODE RULES --- */
+body.dark-mode {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); /* Deep space blue/purple */
+    color: #f8fafc;
+}
+
+body.dark-mode .container {
+    background: rgba(30, 41, 59, 0.75); /* Dark frosted glass */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode textarea {
+    background: #0f172a;
+    color: #f8fafc;
+    border-color: #334155;
+}
+
+body.dark-mode .secondary-btn {
+    background: #334155 !important;
+    color: #f8fafc !important;
+}
+
+body.dark-mode .badge {
+    background: #334155;
+    color: #cbd5e1;
+}
+
+body.dark-mode h1 {
+    background: linear-gradient(to right, #818cf8, #e879f9); /* Lighter gradient for dark mode */
+    -webkit-background-clip: text;
+    background-clip: text;
 }

@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>A11y Auditor <span class="badge">v1.0</span></h1>
+    <div class="container"> <!-- ADD THIS LINE BACK -->
+        
+        <div class="header-top">
+            <h1>A11y Auditor <span class="badge">v1.0</span></h1>
+            <button id="themeToggle" class="icon-btn" title="Toggle Dark Mode">🌙</button>
+        </div>
+        
         <p>Paste your HTML code below to scan for accessibility issues.</p>
         
         <textarea id="htmlInput" placeholder="<html>...</html>"></textarea>

@@ -181,3 +181,18 @@ downloadBtn.addEventListener('click', () => {
     // 5. Cleanup memory
     URL.revokeObjectURL(url);
 });
+
+// --- DARK MODE TOGGLE LOGIC ---
+const themeToggle = document.getElementById('themeToggle');
+
+themeToggle.addEventListener('click', () => {
+    // This adds or removes the 'dark-mode' class on the body tag
+    document.body.classList.toggle('dark-mode');
+    
+    // Change the icon depending on the mode
+    if (document.body.classList.contains('dark-mode')) {
+        themeToggle.innerText = '☀️'; // Switch to sun icon
+    } else {
+        themeToggle.innerText = '🌙'; // Switch back to moon icon
+    }
+});
