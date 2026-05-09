@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A11y Auditor Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>A11y Auditor <span class="badge">v1.0</span></h1>
+        <p>Paste your HTML code below to scan for accessibility issues.</p>
+        
+        <textarea id="htmlInput" placeholder="<html>...</html>"></textarea>
+        
+        <div class="button-group">
+        <button id="scanBtn">Run Audit</button>
+        <button id="sampleBtn" class="secondary-btn">Load Sample HTML</button>
+        <button id="clearBtn" class="secondary-btn">Clear All</button>
+        <button id="downloadBtn" class="secondary-btn">Download Report</button>
+    </div>
+
+        <div id="resultsContainer">
+            <div id="summary"></div>
+            <div id="issueList"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
