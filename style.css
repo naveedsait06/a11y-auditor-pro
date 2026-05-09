@@ -261,3 +261,30 @@ body.dark-mode h1 {
     -webkit-background-clip: text;
     background-clip: text;
 }
+
+/* --- MOBILE RESPONSIVENESS FIXES --- */
+@media screen and (max-width: 768px) {
+    /* Reduce container padding so it fits better on small screens */
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    /* Shrink the main title so it doesn't wrap awkwardly */
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Turn the buttons into a neat 2x2 grid so they never overflow */
+    .button-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    /* Slightly smaller padding on buttons for mobile */
+    button {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+}
